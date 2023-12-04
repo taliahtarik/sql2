@@ -1,3 +1,6 @@
+SELECT * FROM current_portfolios;
+
+
 CREATE TABLE current_portfolios (
     stockticker VARCHAR(10) NOT NULL,
     numberofshares INT NOT NULL,
@@ -7,16 +10,27 @@ CREATE TABLE current_portfolios (
     PRIMARY KEY (stockticker)
 );
 
-CREATE TABLE companytwo (
+CREATE TABLE company (
     companyname VARCHAR(50) NOT NULL,
-    stockticker VARCHAR(10) NOT NULL, 
+    stockticker VARCHAR(10) NOT NULL,
     industry VARCHAR(50) NOT NULL,
     PRIMARY KEY (stockticker)
 );
+
 
 INSERT INTO current_portfolios (stockticker, numberofshares, datepurchased, pricepurchased, currentprice)
 VALUES
     ('AAPL', 100, '2022-01-15', 170.50, 175.25),
     ('GOOG', 50, '2021-08-05', 2650.75, 2700.00),
     ('MSFT', 75, '2022-03-10', 280.00, 285.50),
-    ('T', 200, '2021-12-15', 30.25, 32.00);
+    ('T', 200, '2021-12-15', 30.25, 32.00),
+    ('AMZN', 30, '2022-06-20', 3500.00, 3550.50);
+
+INSERT INTO company (companyname, stockticker, industry)
+VALUES
+    ('Apple Inc', 'AAPL', 'Consumer Electronics'),
+    ('Alphabet Inc', 'GOOG', 'Technology'),
+    ('Microsoft Corporation', 'MSFT', 'Technology'),
+    ('AT&T Inc', 'T', 'Telecommunications'),
+    ('Amazon.com Inc', 'AMZN', 'E-Commerce');
+
